@@ -1,0 +1,8 @@
+{
+  "domain": "gtfs_realtime",
+  "name": "GTFS realtime",
+  "documentation": "https://github.com/krzkowalczyk/hass-gtfs-realtime",
+  "requirements": ["gtfs-realtime-bindings==0.0.5"],
+  "dependencies": [],
+  "codeowners": []
+}
