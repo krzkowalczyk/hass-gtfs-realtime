@@ -1,6 +1,6 @@
 import datetime
 import logging
-import requests
+import urllib.request
 
 import voluptuous as vol
 
@@ -152,8 +152,8 @@ class PublicTransportData(object):
                 self.position = position
 
         feed = gtfs_realtime_pb2.FeedMessage()
-        response = requests.get(self._trip_update_url)
-        feed.ParseFromString(response.content)
+        response = urllib.request.urlopen(self._trip_update_url)
+        feed.ParseFromString(response.read())
         departure_times = {}
 
         for entity in feed.entity:
